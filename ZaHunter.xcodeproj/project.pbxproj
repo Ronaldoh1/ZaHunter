@@ -9,11 +9,18 @@
 /* Begin PBXBuildFile section */
 		F2BF32BC1AC3CE5A00616B10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF32BB1AC3CE5A00616B10 /* main.m */; };
 		F2BF32BF1AC3CE5A00616B10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF32BE1AC3CE5A00616B10 /* AppDelegate.m */; };
-		F2BF32C21AC3CE5A00616B10 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF32C11AC3CE5A00616B10 /* ViewController.m */; };
+		F2BF32C21AC3CE5A00616B10 /* PizzaListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF32C11AC3CE5A00616B10 /* PizzaListViewController.m */; };
 		F2BF32C51AC3CE5A00616B10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2BF32C31AC3CE5A00616B10 /* Main.storyboard */; };
 		F2BF32C71AC3CE5A00616B10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2BF32C61AC3CE5A00616B10 /* Images.xcassets */; };
 		F2BF32CA1AC3CE5A00616B10 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2BF32C81AC3CE5A00616B10 /* LaunchScreen.xib */; };
 		F2BF32D61AC3CE5A00616B10 /* ZaHunterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF32D51AC3CE5A00616B10 /* ZaHunterTests.m */; };
+		F2BF32E11AC3D70D00616B10 /* Pizzeria.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF32E01AC3D70D00616B10 /* Pizzeria.m */; };
+		F2BF32E31AC3DA7000616B10 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2BF32E21AC3DA7000616B10 /* CoreLocation.framework */; };
+		F2BF32E51AC3DB1A00616B10 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2BF32E41AC3DB1A00616B10 /* MapKit.framework */; };
+		F2BF32E71AC3E0D400616B10 /* pizzaicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2BF32E61AC3E0D400616B10 /* pizzaicon.png */; };
+		F2BF32EA1AC3E1C500616B10 /* pizzaicon60.png in Resources */ = {isa = PBXBuildFile; fileRef = F2BF32E81AC3E1C500616B10 /* pizzaicon60.png */; };
+		F2BF32EB1AC3E1C500616B10 /* pizzaicon120.png in Resources */ = {isa = PBXBuildFile; fileRef = F2BF32E91AC3E1C500616B10 /* pizzaicon120.png */; };
+		F2BF32ED1AC3E31300616B10 /* pizzaicon80.png in Resources */ = {isa = PBXBuildFile; fileRef = F2BF32EC1AC3E31300616B10 /* pizzaicon80.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +39,22 @@
 		F2BF32BB1AC3CE5A00616B10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F2BF32BD1AC3CE5A00616B10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F2BF32BE1AC3CE5A00616B10 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F2BF32C01AC3CE5A00616B10 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F2BF32C11AC3CE5A00616B10 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F2BF32C01AC3CE5A00616B10 /* PizzaListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PizzaListViewController.h; sourceTree = "<group>"; };
+		F2BF32C11AC3CE5A00616B10 /* PizzaListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PizzaListViewController.m; sourceTree = "<group>"; };
 		F2BF32C41AC3CE5A00616B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2BF32C61AC3CE5A00616B10 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F2BF32C91AC3CE5A00616B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F2BF32CF1AC3CE5A00616B10 /* ZaHunterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZaHunterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BF32D41AC3CE5A00616B10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2BF32D51AC3CE5A00616B10 /* ZaHunterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZaHunterTests.m; sourceTree = "<group>"; };
+		F2BF32DF1AC3D70D00616B10 /* Pizzeria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pizzeria.h; sourceTree = "<group>"; };
+		F2BF32E01AC3D70D00616B10 /* Pizzeria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pizzeria.m; sourceTree = "<group>"; };
+		F2BF32E21AC3DA7000616B10 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F2BF32E41AC3DB1A00616B10 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F2BF32E61AC3E0D400616B10 /* pizzaicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pizzaicon.png; path = ../../../pizzaicon.png; sourceTree = "<group>"; };
+		F2BF32E81AC3E1C500616B10 /* pizzaicon60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pizzaicon60.png; path = ../../../pizzaicon60.png; sourceTree = "<group>"; };
+		F2BF32E91AC3E1C500616B10 /* pizzaicon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pizzaicon120.png; path = ../../../pizzaicon120.png; sourceTree = "<group>"; };
+		F2BF32EC1AC3E31300616B10 /* pizzaicon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pizzaicon80.png; path = ../../../pizzaicon80.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2BF32E51AC3DB1A00616B10 /* MapKit.framework in Frameworks */,
+				F2BF32E31AC3DA7000616B10 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +80,8 @@
 		F2BF32AD1AC3CE5A00616B10 = {
 			isa = PBXGroup;
 			children = (
+				F2BF32E41AC3DB1A00616B10 /* MapKit.framework */,
+				F2BF32E21AC3DA7000616B10 /* CoreLocation.framework */,
 				F2BF32B81AC3CE5A00616B10 /* ZaHunter */,
 				F2BF32D21AC3CE5A00616B10 /* ZaHunterTests */,
 				F2BF32B71AC3CE5A00616B10 /* Products */,
@@ -83,11 +102,17 @@
 			children = (
 				F2BF32BD1AC3CE5A00616B10 /* AppDelegate.h */,
 				F2BF32BE1AC3CE5A00616B10 /* AppDelegate.m */,
-				F2BF32C01AC3CE5A00616B10 /* ViewController.h */,
-				F2BF32C11AC3CE5A00616B10 /* ViewController.m */,
+				F2BF32C01AC3CE5A00616B10 /* PizzaListViewController.h */,
+				F2BF32C11AC3CE5A00616B10 /* PizzaListViewController.m */,
+				F2BF32DF1AC3D70D00616B10 /* Pizzeria.h */,
+				F2BF32E01AC3D70D00616B10 /* Pizzeria.m */,
 				F2BF32C31AC3CE5A00616B10 /* Main.storyboard */,
 				F2BF32C61AC3CE5A00616B10 /* Images.xcassets */,
 				F2BF32C81AC3CE5A00616B10 /* LaunchScreen.xib */,
+				F2BF32E61AC3E0D400616B10 /* pizzaicon.png */,
+				F2BF32E81AC3E1C500616B10 /* pizzaicon60.png */,
+				F2BF32EC1AC3E31300616B10 /* pizzaicon80.png */,
+				F2BF32E91AC3E1C500616B10 /* pizzaicon120.png */,
 				F2BF32B91AC3CE5A00616B10 /* Supporting Files */,
 			);
 			path = ZaHunter;
@@ -199,9 +224,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2BF32ED1AC3E31300616B10 /* pizzaicon80.png in Resources */,
 				F2BF32C51AC3CE5A00616B10 /* Main.storyboard in Resources */,
+				F2BF32EB1AC3E1C500616B10 /* pizzaicon120.png in Resources */,
 				F2BF32CA1AC3CE5A00616B10 /* LaunchScreen.xib in Resources */,
 				F2BF32C71AC3CE5A00616B10 /* Images.xcassets in Resources */,
+				F2BF32EA1AC3E1C500616B10 /* pizzaicon60.png in Resources */,
+				F2BF32E71AC3E0D400616B10 /* pizzaicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +248,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2BF32C21AC3CE5A00616B10 /* ViewController.m in Sources */,
+				F2BF32C21AC3CE5A00616B10 /* PizzaListViewController.m in Sources */,
 				F2BF32BF1AC3CE5A00616B10 /* AppDelegate.m in Sources */,
 				F2BF32BC1AC3CE5A00616B10 /* main.m in Sources */,
+				F2BF32E11AC3D70D00616B10 /* Pizzeria.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
