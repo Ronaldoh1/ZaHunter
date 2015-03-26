@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
 @interface Pizzeria : NSObject
 
 @property NSString *address;
+@property float milesDifference; 
+@property MKMapItem *mapItem;
 
 @end

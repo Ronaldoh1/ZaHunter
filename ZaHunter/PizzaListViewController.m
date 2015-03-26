@@ -9,13 +9,16 @@
 #import "PizzaListViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Pizzeria.h"
 
-@interface PizzaListViewController ()<CLLocationManagerDelegate>
+@interface PizzaListViewController ()<CLLocationManagerDelegate, UITableViewDataSource,UITableViewDelegate>
 
 //---Need a location manager to manage user's current location --//
 
 @property CLLocationManager *locationManager;
 @property CLLocation *currentLocation;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSArray *pizzaPlacesArray;
 
 @end
 
@@ -24,20 +27,62 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.locationManager = [CLLocationManager new];
     //set the delegate for the current view controller.
 
     self.locationManager.delegate = self;
-    self.locationManager = [CLLocationManager new];
+
 
     //call helper method to update user's current location.
     [self UpdateUserCurrentLocation];
 
- 
+
+
 }
 
 -(void)UpdateUserCurrentLocation{
-    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingLocation];
+
+}
+//--Helper method to find local pizzeria's//
+-(void)findPizzerias:(CLLocation *)location{
+    MKLocalSearchRequest *request = [MKLocalSearchRequest new];
+    request.naturalLanguageQuery = @"pizza";
+    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.05, 0.05));
+
+    //Do a local search
+    MKLocalSearch *search = [[MKLocalSearch alloc]initWithRequest:request];
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+
+
+        NSArray *mapItems = response.mapItems;
+        NSMutableArray *tempArray = [NSMutableArray new];
+
+        for (int i = 0; i< 4; i++){
+            MKMapItem *mapItem = [mapItems objectAtIndex:i];
+            CLLocationDistance metersAway = [mapItem.placemark.location distanceFromLocation:location];
+
+            float milesdifference = metersAway/1609.34;
+            Pizzeria *pizzeria = [Pizzeria new];
+
+            pizzeria.milesDifference = milesdifference;
+            pizzeria.mapItem = mapItem;
+
+            [tempArray addObject:pizzeria];
+
+            NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"milesDifference" ascending: true];
+            NSArray *sortedArray = [tempArray sortedArrayUsingDescriptors:@[sortDescriptor]];
+
+            self.pizzaPlacesArray = [NSArray arrayWithArray:sortedArray];
+            [self.tableView reloadData];
+
+            NSLog(@"%@", pizzeria.mapItem.name);
+
+        }
+
+
+    }];
 
 }
 
@@ -48,8 +93,26 @@
 
     self.currentLocation = locations.firstObject;
     NSLog(@"%@",self.currentLocation);
+    [self.locationManager stopUpdatingLocation];
+    [self findPizzerias:self.currentLocation];
 
 }
+
+#pragma Mark TableView-Delegate Methods
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return self.pizzaPlacesArray.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
+    
+    cell.textLabel.text = [[[self.pizzaPlacesArray objectAtIndex:indexPath.row]mapItem]name];
+    
+    
+    return cell;
+}
+
 
 
 @end
