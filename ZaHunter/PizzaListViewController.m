@@ -28,18 +28,16 @@
     [super viewDidLoad];
 
     self.locationManager = [CLLocationManager new];
+
     //set the delegate for the current view controller.
-
     self.locationManager.delegate = self;
-
 
     //call helper method to update user's current location.
     [self UpdateUserCurrentLocation];
 
-
-
 }
 
+//--Helper method to update the current location--//
 -(void)UpdateUserCurrentLocation{
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingLocation];
@@ -63,15 +61,15 @@
             MKMapItem *mapItem = [mapItems objectAtIndex:i];
             CLLocationDistance metersAway = [mapItem.placemark.location distanceFromLocation:location];
 
-            float milesdifference = metersAway/1609.34;
+            float distance = metersAway/1609.34;
             Pizzeria *pizzeria = [Pizzeria new];
 
-            pizzeria.milesDifference = milesdifference;
+            pizzeria.distanceToPizzeria = distance;
             pizzeria.mapItem = mapItem;
 
             [tempArray addObject:pizzeria];
 
-            NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"milesDifference" ascending: true];
+            NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"distanceToPizzeria" ascending: true];
             NSArray *sortedArray = [tempArray sortedArrayUsingDescriptors:@[sortDescriptor]];
 
             self.pizzaPlacesArray = [NSArray arrayWithArray:sortedArray];
@@ -106,8 +104,9 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
-    
     cell.textLabel.text = [[[self.pizzaPlacesArray objectAtIndex:indexPath.row]mapItem]name];
+    float miles  = [[self.pizzaPlacesArray objectAtIndex:indexPath.row]distanceToPizzeria];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f Miles",miles];
     
     
     return cell;

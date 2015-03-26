@@ -12,7 +12,7 @@
 @interface Pizzeria : NSObject
 
 @property NSString *address;
-@property float milesDifference; 
+@property float distanceToPizzeria;
 @property MKMapItem *mapItem;
 
 @end
