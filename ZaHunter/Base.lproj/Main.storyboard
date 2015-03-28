@@ -47,9 +47,21 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="Qve-qd-uno"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay9-cf-cjm">
+                                <rect key="frame" x="0.0" y="514" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9Yd-Zh-1kj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ay9-cf-cjm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="450" id="8BW-T9-DNj"/>
+                            <constraint firstItem="Ay9-cf-cjm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="LOu-40-thQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ay9-cf-cjm" secondAttribute="trailing" constant="-16" id="M7w-UE-jpx"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="pyJ-OH-kxh" secondAttribute="bottom" id="VUo-ja-QdD"/>
                             <constraint firstItem="pyJ-OH-kxh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="ZvV-w5-Evz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pyJ-OH-kxh" secondAttribute="trailing" constant="-16" id="bsv-mx-HUb"/>
@@ -60,6 +72,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="tableView" destination="pyJ-OH-kxh" id="0U8-xC-Nyr"/>
+                        <outlet property="totalTimeLabel" destination="Ay9-cf-cjm" id="X1S-UT-9KN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

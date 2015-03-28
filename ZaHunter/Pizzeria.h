@@ -14,5 +14,6 @@
 @property NSString *address;
 @property float distanceToPizzeria;
 @property MKMapItem *mapItem;
+@property CLLocation *location;
 
 @end
